@@ -1,9 +1,13 @@
 package com.sirprogram.wordcount;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Main {
 
-    public static void main(String[] args) {
+    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
-        System.out.println("Program Started");
+    public static void main(String[] args) {
+        LOG.info("Program Started");
     }
 }
