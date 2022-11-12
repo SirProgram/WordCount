@@ -37,7 +37,7 @@ class WordCountFileReaderTest {
         String filePath = classLoader.getResource("shortText.txt").getFile();
         List<String> strings = reader.readFile(filePath);
 
-        Assertions.assertThat(strings.size()).isEqualTo(3);
+        Assertions.assertThat(strings).hasSize(3);
     }
 
     @Test

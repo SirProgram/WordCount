@@ -1,9 +1,8 @@
 package com.sirprogram.wordcount;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class WordCounter {
@@ -26,7 +25,15 @@ public class WordCounter {
     }
 
     public List<WordCountOccurrence> getCountedWordsByOccurance() {
-        return Collections.emptyList();
+        return wordCount.entrySet().stream()
+                .sorted(Map.Entry.<String,Integer>comparingByValue(Comparator.reverseOrder())
+                        .thenComparing(Map.Entry.comparingByKey()))
+                .map(entryToWordCountOccurrence())
+                .collect(Collectors.toList());
+    }
+
+    private static Function<Map.Entry<String, Integer>, WordCountOccurrence> entryToWordCountOccurrence() {
+        return e -> new WordCountOccurrence(e.getKey(), e.getValue());
     }
 
 }
