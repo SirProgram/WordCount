@@ -51,16 +51,16 @@ class RunWordCountTest {
         String expectedLoggedResult = """
                 line:3
                 the:2
-                And:1
-                Here:1
-                This:1
                 a:1
+                and:1
                 comes:1
                 first:1
+                here:1
                 is:1
                 second:1
                 there's:1
                 third:1
+                this:1
                 too:1
                 """;
 

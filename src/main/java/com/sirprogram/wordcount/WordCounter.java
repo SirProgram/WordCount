@@ -16,7 +16,13 @@ public class WordCounter {
         inputStrings.stream()
                 .map(s -> s.split(" "))
                 .flatMap(Stream::of)
+                .map(this::removePunctuation)
+                .map(String::toLowerCase)
                 .forEach(this::countSingleWord);
+    }
+
+    private String removePunctuation(String word) {
+        return word.replaceAll("[.\":;,!?(){}]", "");
     }
 
     private void countSingleWord(String word) {
