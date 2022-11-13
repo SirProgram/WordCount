@@ -3,11 +3,11 @@
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
        </encoder>
     </appender>
 
-    <logger name="com.sirprogram" level="info" additivity="false">
+    <logger name="com.sirprogram" level="debug" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 
